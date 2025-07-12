@@ -33,10 +33,14 @@ public class WeatherProducer implements CommandLineRunner {
     }
 
     public void run(String... args) {
-        System.out.println("Running");
-        for (int i = 0; i < 10; i++) {
+        while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Thread was interrupted while sleeping.");
+            }
             sendRandomWeather();
         }
-        System.out.println("Done");
     }
 }

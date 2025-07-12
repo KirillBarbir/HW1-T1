@@ -11,6 +11,7 @@ public class WeatherStamp {
     public int cloudCover;
     public String city;
     public Date time;
+    public Date timestamp = new Date();
     public WeatherStamp() {}
 
     public void setRandomWeather(){
@@ -22,6 +23,6 @@ public class WeatherStamp {
         cloudCover = rand.nextInt(90) + 10;
         city = "Moscow";
         time = new Date();
-        time.setTime(rand.nextLong(1000000) + 1000000);
+        time.setTime(rand.nextLong(10000000000L) + 1750000000000L);
     }
 }
